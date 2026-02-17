@@ -1,0 +1,9 @@
+{
+  "name": "korean-plastic-surgery-campaigns",
+  "version": "1.0.0",
+  "description": "Korean plastic surgery campaign feed demo",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build needed'"
+  }
+}

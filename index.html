@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓国美容整形 キャンペーンフィード</title>
+    <!-- Twitter Widgets Script -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            background: linear-gradient(135deg, #F5F1E8 0%, #E8DCC8 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #FFE5D9 0%, #FFC8B4 50%, #FFB4A2 100%);
+            padding: 3rem 1rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(255, 180, 162, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #2C2416;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title-line {
+            display: block;
+        }
+
+        h1 .emoji {
+            font-size: 2.2rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: #5A4A3A;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #8B6F5C;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        #campaign-feed {
+            column-count: 1;
+            column-gap: 1rem;
+        }
+
+        /* Tablet: 2 columns */
+        @media (min-width: 768px) {
+            #campaign-feed {
+                column-count: 2;
+                column-gap: 1.25rem;
+            }
+        }
+
+        /* Desktop: 3 columns */
+        @media (min-width: 1024px) {
+            #campaign-feed {
+                column-count: 3;
+                column-gap: 1.5rem;
+            }
+        }
+
+        /* Mobile optimization: limit tweet height */
+        @media (max-width: 767px) {
+            .campaign-card .twitter-tweet {
+                max-height: 400px;
+                overflow: hidden;
+            }
+
+            .campaign-card {
+                padding: 1rem;
+            }
+        }
+
+        .campaign-card {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF9F5 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(255, 180, 162, 0.15);
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+            break-inside: avoid;
+            page-break-inside: avoid;
+            border: 1px solid rgba(255, 200, 180, 0.2);
+        }
+
+        .campaign-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(255, 180, 162, 0.25);
+            border-color: rgba(255, 180, 162, 0.4);
+        }
+
+        .campaign-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2C2416;
+            margin-bottom: 0.25rem;
+        }
+
+        .campaign-card .handle {
+            font-size: 0.85rem;
+            color: #8B7355;
+            margin-bottom: 1rem;
+        }
+
+        .procedure-label {
+            font-size: 0.85rem;
+            color: #6B5D4F;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #6B5D4F;
+            font-size: 0.85rem;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6B5D4F;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab:hover {
+            background: rgba(255, 180, 162, 0.1);
+            color: #2C2416;
+        }
+
+        .nav-tab.active {
+            color: #FFB4A2;
+            border-bottom-color: #FFB4A2;
+            background: rgba(255, 180, 162, 0.05);
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* Clinic List Styles */
+        .clinic-list-header {
+            max-width: 1400px;
+            margin: 2rem auto 1rem;
+            padding: 0 1rem;
+        }
+
+        .clinic-list-header h2 {
+            font-size: 1.8rem;
+            color: #2C2416;
+            margin-bottom: 0.5rem;
+        }
+
+        .clinic-list-header p {
+            color: #6B5D4F;
+            margin-bottom: 1rem;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 1.5rem 0;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid rgba(255, 180, 162, 0.3);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #FFB4A2;
+            box-shadow: 0 0 0 3px rgba(255, 180, 162, 0.1);
+        }
+
+        .disclaimer-notice {
+            background: rgba(255, 180, 162, 0.1);
+            border-left: 4px solid #FFB4A2;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #6B5D4F;
+            line-height: 1.6;
+        }
+
+        .feedback-button {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #FFB4A2 0%, #FFC8B4 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 180, 162, 0.3);
+        }
+
+        #clinic-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .clinic-item {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF9F5 100%);
+            border: 1px solid rgba(255, 200, 180, 0.2);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .clinic-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 180, 162, 0.2);
+            border-color: rgba(255, 180, 162, 0.4);
+        }
+
+        .clinic-name {
+            font-weight: 600;
+            color: #2C2416;
+            font-size: 0.95rem;
+        }
+
+        .clinic-account {
+            color: #FFB4A2;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .clinic-account:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 767px) {
+            #clinic-list {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tab {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0 50px;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+
+        .page-btn:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .page-btn.active {
+            background: linear-gradient(135deg, #ff9a9e 0%, #ff6b6b 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(255, 107, 107, 0.3);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div>
+            <h1>
+                <span class="emoji">✨</span>
+                <span class="title-line">韓国美容整形</span>
+                <span class="title-line">キャンペーン</span>
+            </h1>
+            <p class="subtitle">
+                最新のキャンペーン・モニター募集情報
+            </p>
+            <div class="disclaimer">
+                ⚠️ 各クリニックに最新情報をご確認ください<br>
+                キャンペーンは予告なく終了する可能性があります
+            </div>
+            <a href="https://x.com/gn0ycrb0ha65833?s=11" target="_blank" class="feedback-button header-feedback">
+                📩 DMで情報を送る (@gn0ycrb0ha65833)
+            </a>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="nav-container">
+            <button class="nav-tab active" onclick="switchPage('campaigns')">キャンペーン</button>
+            <button class="nav-tab" onclick="switchPage('clinics')">クリニックリスト</button>
+        </div>
+    </nav>
+
+    <!-- Campaign Feed Page -->
+    <div id="campaigns-page" class="page-section active">
+        <main>
+            <div id="campaign-feed">
+                <!-- Campaigns will be inserted here by JavaScript -->
+            </div>
+            <div id="pagination-container" class="pagination">
+                <!-- Pagination buttons will be inserted here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Clinic List Page -->
+    <div id="clinics-page" class="page-section">
+        <div class="clinic-list-header">
+            <h2>📋 クリニックリスト</h2>
+            <p>日本語で情報発信している韓国美容整形クリニック一覧（あいうえお順）</p>
+            <div class="disclaimer-notice">
+                <p><strong>ℹ️ このリストはあくまで参考情報です（随時更新中）</strong></p>
+                <p>掲載されている情報が全てのクリニックを網羅しているわけではありません。<br>
+                    情報の正確性には配慮していますが、最新情報は必ず各クリニックの公式発信をご確認ください。</p>
+                <p><strong>※当サイトの情報を用いて行った施術やトラブルに関して、運営者は一切の責任を負いかねます。</strong></p>
+                <p>もし掲載されていないクリニックにお気づきの際は、下記アカウントのDMまで情報をお寄せください。</p>
+                <a href="https://x.com/gn0ycrb0ha65833?s=11" target="_blank" class="feedback-button">
+                    📩 DMで情報を送る (@gn0ycrb0ha65833)
+                </a>
+            </div>
+            <div class="search-box">
+                <input type="text" id="clinic-search" placeholder="🔍 クリニック名で検索（ひらがな・カタカナ・英語OK）..."
+                    onkeyup="filterClinics()">
+            </div>
+        </div>
+        <div id="clinic-list">
+            <!-- Clinics will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <p>韓国美容整形キャンペーンフィード</p>
+            <p>情報は2026年2月時点のものです</p>
+        </div>
+    </footer>
+
+    <script>
+        // Top 30 Campaign Data with Verified Tweet IDs
+        const campaigns = [
+            {
+                id: "new-8",
+                clinicName: "フレッシュホンドクター整形外科",
+                handle: "@freshps5512",
+                tweetId: "2012045102852841889",
+                url: "https://x.com/freshps5512/status/2012045102852841889",
+                procedure: "福岡相談会 (3/8)"
+            },
+            {
+                id: "new-9",
+                clinicName: "ビューティーライン整形外科",
+                handle: "@beautylinejp",
+                tweetId: "2006940883523166498",
+                url: "https://x.com/beautylinejp/status/2006940883523166498",
+                procedure: "顔脂肪吸引 最大30%OFF"
+            },
+            {
+                id: "new-10",
+                clinicName: "ビューティーライン整形外科",
+                handle: "@beautylinejp",
+                tweetId: "2023200658246254661",
+                url: "https://x.com/beautylinejp/status/2023200658246254661",
+                procedure: "ナノVライン (顔脂肪吸引)"
+            },
+            {
+                id: "new-11",
+                clinicName: "フレッシュホンドクター整形外科",
+                handle: "@freshps5512",
+                tweetId: "2023278166777979209",
+                url: "https://x.com/freshps5512/status/2023278166777979209",
+                procedure: "新生活応援イベント"
+            },
+            {
+                id: "new-12",
+                clinicName: "ソジン美容整形外科",
+                handle: "@seojin_ps",
+                tweetId: "2017496676089417973",
+                url: "https://x.com/seojin_ps/status/2017496676089417973",
+                procedure: "追加施術22%OFF (2月限定)"
+            },
+            {
+                id: "new-13",
+                clinicName: "狎鴎亭TOPLINE医院",
+                handle: "@aptopline1675",
+                tweetId: "2017079252445954374",
+                url: "https://x.com/aptopline1675/status/2017079252445954374",
+                procedure: "日本相談会 (東京2/21-22 大阪3/28-29)"
+            },
+            {
+                id: "new-14",
+                clinicName: "リア美容外科",
+                handle: "@reapsjp",
+                tweetId: "2015746920623571033",
+                url: "https://x.com/reapsjp/status/2015746920623571033",
+                procedure: "リフティング無料モニター"
+            },
+            {
+                id: "new-15",
+                clinicName: "リンク美容外科",
+                handle: "@kankokuseikei_",
+                tweetId: "1996870040797565281",
+                url: "https://x.com/kankokuseikei_/status/1996870040797565281",
+                procedure: "先取りフェア (目・鼻・へそ・豊胸)"
+            },
+            {
+                id: "new-16",
+                clinicName: "ビューラベル美容整形外科",
+                handle: "@beulibal",
+                tweetId: "2018398392263877029",
+                url: "https://x.com/beulibal/status/2018398392263877029",
+                procedure: "整形モニターイベント (目整形)"
+            },
+            {
+                id: "new-17",
+                clinicName: "韓国アイフィット整形外科",
+                handle: "@eyefit_kr",
+                tweetId: "2003736053006688626",
+                url: "https://x.com/eyefit_kr/status/2003736053006688626",
+                procedure: "イベント延長 (目整形・クマ取り)"
+            },
+            {
+                id: "new-18",
+                clinicName: "スケッチ整形外科",
+                handle: "@Sketch_psjp",
+                tweetId: "2013530003418628111",
+                url: "https://x.com/Sketch_psjp/status/2013530003418628111",
+                procedure: "目頭+目尻切開 99万ウォン"
+            },
+            {
+                id: "new-19",
+                clinicName: "韓国エディション美容外科",
+                handle: "@editionprs",
+                tweetId: "2021116338006331707",
+                url: "https://x.com/editionprs/status/2021116338006331707",
+                procedure: "APTOS糸リフト リアルモデル募集"
+            },
+            {
+                id: "new-20",
+                clinicName: "エンド美容整形外科 (And)",
+                handle: "@and_ps_eye",
+                tweetId: "2010902910272709043",
+                url: "https://x.com/and_ps_eye/status/2010902910272709043",
+                procedure: "目元美整形イベント価格"
+            },
+            {
+                id: "new-21",
+                clinicName: "JT整形外科",
+                handle: "@JTJPps",
+                tweetId: "2021885436977946795",
+                url: "https://x.com/JTJPps/status/2021885436977946795",
+                procedure: "全顔モニター募集 (初鼻整形)"
+            },
+            {
+                id: "new-8",
+                clinicName: "フレッシュホンドクター整形外科",
+                handle: "@freshps5512",
+                tweetId: "2012045102852841889",
+                url: "https://x.com/freshps5512/status/2012045102852841889",
+                procedure: "福岡相談会 (3/8)"
+            },
+            {
+                id: "new-9",
+                clinicName: "ビューティーライン整形外科",
+                handle: "@beautylinejp",
+                tweetId: "2006940883523166498",
+                url: "https://x.com/beautylinejp/status/2006940883523166498",
+                procedure: "顔脂肪吸引 最大30%OFF"
+            },
+            {
+                id: "new-10",
+                clinicName: "ビューティーライン整形外科",
+                handle: "@beautylinejp",
+                tweetId: "2023200658246254661",
+                url: "https://x.com/beautylinejp/status/2023200658246254661",
+                procedure: "ナノVライン (顔脂肪吸引)"
+            },
+            {
+                id: "new-11",
+                clinicName: "フレッシュホンドクター整形外科",
+                handle: "@freshps5512",
+                tweetId: "2023278166777979209",
+                url: "https://x.com/freshps5512/status/2023278166777979209",
+                procedure: "新生活応援イベント"
+            },
+            {
+                id: "new-12",
+                clinicName: "ソジン美容整形外科",
+                handle: "@seojin_ps",
+                tweetId: "2017496676089417973",
+                url: "https://x.com/seojin_ps/status/2017496676089417973",
+                procedure: "追加施術22%OFF (2月限定)"
+            },
+            {
+                id: "new-13",
+                clinicName: "狎鴎亭TOPLINE医院",
+                handle: "@aptopline1675",
+                tweetId: "2017079252445954374",
+                url: "https://x.com/aptopline1675/status/2017079252445954374",
+                procedure: "日本相談会 (東京2/21-22 大阪3/28-29)"
+            },
+            {
+                id: "new-14",
+                clinicName: "リア美容外科",
+                handle: "@reapsjp",
+                tweetId: "2015746920623571033",
+                url: "https://x.com/reapsjp/status/2015746920623571033",
+                procedure: "リフティング無料モニター"
+            },
+            {
+                id: "new-15",
+                clinicName: "リンク美容外科",
+                handle: "@kankokuseikei_",
+                tweetId: "1996870040797565281",
+                url: "https://x.com/kankokuseikei_/status/1996870040797565281",
+                procedure: "先取りフェア (目・鼻・へそ・豊胸)"
+            },
+            {
+                id: "new-16",
+                clinicName: "ビューラベル美容整形外科",
+                handle: "@beulibal",
+                tweetId: "2018398392263877029",
+                url: "https://x.com/beulibal/status/2018398392263877029",
+                procedure: "整形モニターイベント (目整形)"
+            },
+            {
+                id: "new-17",
+                clinicName: "韓国アイフィット整形外科",
+                handle: "@eyefit_kr",
+                tweetId: "2003736053006688626",
+                url: "https://x.com/eyefit_kr/status/2003736053006688626",
+                procedure: "イベント延長 (目整形・クマ取り)"
+            },
+            {
+                id: "new-18",
+                clinicName: "スケッチ整形外科",
+                handle: "@Sketch_psjp",
+                tweetId: "2013530003418628111",
+                url: "https://x.com/Sketch_psjp/status/2013530003418628111",
+                procedure: "目頭+目尻切開 99万ウォン"
+            },
+            {
+                id: "new-19",
+                clinicName: "韓国エディション美容外科",
+                handle: "@editionprs",
+                tweetId: "2021116338006331707",
+                url: "https://x.com/editionprs/status/2021116338006331707",
+                procedure: "APTOS糸リフト リアルモデル募集"
+            },
+            {
+                id: "new-20",
+                clinicName: "エンド美容整形外科 (And)",
+                handle: "@and_ps_eye",
+                tweetId: "2010902910272709043",
+                url: "https://x.com/and_ps_eye/status/2010902910272709043",
+                procedure: "目元美整形イベント価格"
+            },
+            {
+                id: "new-21",
+                clinicName: "JT整形外科",
+                handle: "@JTJPps",
+                tweetId: "2021885436977946795",
+                url: "https://x.com/JTJPps/status/2021885436977946795",
+                procedure: "全顔モニター募集 (初鼻整形)"
+            },
+            {
+                id: "new-1",
+                clinicName: "コエンミ(ソウルクイーン)整形外科",
+                handle: "@seoulqueen7",
+                tweetId: "2009200567542010088",
+                url: "https://x.com/seoulqueen7/status/2009200567542010088",
+                procedure: "鼻整形・無料モニター"
+            },
+            {
+                id: "new-2",
+                clinicName: "ヨンセUP整形外科",
+                handle: "@YonseiupSeoul",
+                tweetId: "2020709633791582489",
+                url: "https://x.com/YonseiupSeoul/status/2020709633791582489",
+                procedure: "日本現地相談会 (渋谷 3/21-22)"
+            },
+            {
+                id: "new-3",
+                clinicName: "マーブル美容外科",
+                handle: "@marblepsjapan",
+                tweetId: "2013160255979725178",
+                url: "https://x.com/marblepsjapan/status/2013160255979725178",
+                procedure: "日本相談会 (名古屋2/21・大阪2/22)"
+            },
+            {
+                id: "new-4",
+                clinicName: "エートップ美容整形外科",
+                handle: "@atopseikei",
+                tweetId: "2018585872795586856",
+                url: "https://x.com/atopseikei/status/2018585872795586856",
+                procedure: "タックスリファンド割引＆積立金"
+            },
+            {
+                id: "new-5",
+                clinicName: "ビュー美容外科",
+                handle: "@kr_biyo_seikei",
+                tweetId: "2022183776944894059",
+                url: "https://x.com/kr_biyo_seikei/status/2022183776944894059",
+                procedure: "豊胸手術イベント"
+            },
+            {
+                id: "new-6",
+                clinicName: "ジュエリー美容外科",
+                handle: "@jewelrypsjapan",
+                tweetId: "2022294686485086642",
+                url: "https://x.com/jewelrypsjapan/status/2022294686485086642",
+                procedure: "大阪相談会 (3月)"
+            },
+            {
+                id: "new-7",
+                clinicName: "江南リスリム医院",
+                handle: "@RESLIMCLINIC",
+                tweetId: "2019330716069425298",
+                url: "https://x.com/RESLIMCLINIC/status/2019330716069425298",
+                procedure: "脂肪吸引割引"
+            },
+            {
+                id: "1",
+                clinicName: "EU口腔顎顔面外科",
+                handle: "@Eujapan2",
+                tweetId: "2017764842317496675",
+                url: "https://x.com/Eujapan2/status/2017764842317496675",
+                procedure: "両顎手術・輪郭2点"
+            },
+            {
+                id: "2",
+                clinicName: "ARC美容整形外科",
+                handle: "@ARC_ps_02",
+                tweetId: "2017846476135907772",
+                url: "https://x.com/ARC_ps_02/status/2017846476135907772",
+                procedure: "豊胸"
+            },
+            {
+                id: "3",
+                clinicName: "フェイスプラス整形外科",
+                handle: "@faceplusjp",
+                tweetId: "2001093807702728993",
+                url: "https://x.com/faceplusjp/status/2001093807702728993",
+                procedure: "モニター募集"
+            },
+            {
+                id: "4",
+                clinicName: "クッキー整形外科",
+                handle: "@cookipskorea",
+                tweetId: "1985955619602362589",
+                url: "https://x.com/cookipskorea/status/1985955619602362589",
+                procedure: "輪郭3点"
+            },
+            {
+                id: "5",
+                clinicName: "サンキュー美容外科",
+                handle: "@thankyoups_jp",
+                tweetId: "2021455884883530125",
+                url: "https://x.com/thankyoups_jp/status/2021455884883530125",
+                procedure: "鼻整形"
+            },
+            {
+                id: "6",
+                clinicName: "PLADEN (プラデン) 美容整形外科",
+                handle: "@PLADENPSJAPAN",
+                tweetId: "2013895889648263404",
+                url: "https://x.com/PLADENPSJAPAN/status/2013895889648263404",
+                procedure: "輪郭・鼻整形"
+            },
+            {
+                id: "7",
+                clinicName: "ギリン整形外科",
+                handle: "@girinjp",
+                tweetId: "2016820092412317810",
+                url: "https://x.com/girinjp/status/2016820092412317810",
+                procedure: "中顔面リフト・人中リフト"
+            },
+            {
+                id: "8",
+                clinicName: "SODA美容外科",
+                handle: "@sodaps_official",
+                tweetId: "2003336933888655607",
+                url: "https://x.com/sodaps_official/status/2003336933888655607",
+                procedure: "輪郭3点・鼻整形"
+            },
+            {
+                id: "9",
+                clinicName: "リエンジャン美容外科",
+                handle: "@lienjangjp",
+                tweetId: "2019227791842242718",
+                url: "https://x.com/lienjangjp/status/2019227791842242718",
+                procedure: "目整形"
+            },
+            {
+                id: "10",
+                clinicName: "オンユ (ONYU)",
+                handle: "@onyoops_jp",
+                tweetId: "2020655133009338813",
+                url: "https://x.com/onyoops_jp/status/2020655133009338813",
+                procedure: "顔の脂肪吸引＋バッカルファット除去"
+            },
+            {
+                id: "11",
+                clinicName: "JT整形外科",
+                handle: "@JTJPps",
+                tweetId: "2021885436977946795",
+                url: "https://x.com/JTJPps/status/2021885436977946795",
+                procedure: "鼻整形"
+            },
+            {
+                id: "12",
+                clinicName: "NANA美容外科",
+                handle: "@nanahospital",
+                tweetId: "2008104035413582252",
+                url: "https://x.com/nanahospital/status/2008104035413582252",
+                procedure: "豊胸500万ウォン"
+            },
+            {
+                id: "13",
+                clinicName: "VIBE美容外科",
+                handle: "@vibeprs",
+                tweetId: "2022180798556962891",
+                url: "https://x.com/vibeprs/status/2022180798556962891",
+                procedure: "顔の脂肪吸引"
+            },
+            {
+                id: "14",
+                clinicName: "フルリュン美容外科",
+                handle: "@excellent_ps",
+                tweetId: "2018878065108296176",
+                url: "https://x.com/excellent_ps/status/2018878065108296176",
+                procedure: "リフティング"
+            },
+            {
+                id: "15",
+                clinicName: "BE THE NEW",
+                handle: "@bethenewjp",
+                tweetId: "2017463602916004023",
+                url: "https://x.com/bethenewjp/status/2017463602916004023",
+                procedure: "鼻整形"
+            },
+            {
+                id: "16",
+                clinicName: "1mm美容外科",
+                handle: "@1mmps_jp",
+                tweetId: "2006966930750738727",
+                url: "https://x.com/1mmps_jp/status/2006966930750738727",
+                procedure: "無料手術モニター募集"
+            },
+            {
+                id: "17",
+                clinicName: "ラミチェ美容外科",
+                handle: "@Lamiche_Japan",
+                tweetId: "2013938059385905593",
+                url: "https://x.com/Lamiche_Japan/status/2013938059385905593",
+                procedure: "小鼻縮小イベント"
+            },
+            {
+                id: "18",
+                clinicName: "345整形外科",
+                handle: "@345plastic",
+                tweetId: "2018585702574002575",
+                url: "https://x.com/345plastic/status/2018585702574002575",
+                procedure: "鼻整形"
+            },
+            {
+                id: "19",
+                clinicName: "BYME整形外科",
+                handle: "@bymeps",
+                tweetId: "2019979636659433948",
+                url: "https://x.com/bymeps/status/2019979636659433948",
+                procedure: "豊胸"
+            },
+            {
+                id: "20",
+                clinicName: "BYME整形外科",
+                handle: "@bymeps",
+                tweetId: "2016827452220420573",
+                url: "https://x.com/bymeps/status/2016827452220420573",
+                procedure: "脂肪吸引"
+            },
+            {
+                id: "21",
+                clinicName: "ジャスト美容整形外科",
+                handle: "@justprsjp",
+                tweetId: "2008462091179729241",
+                url: "https://x.com/justprsjp/status/2008462091179729241",
+                procedure: "糸リフト・目の下脂肪再配置"
+            },
+            {
+                id: "22",
+                clinicName: "Between美容整形外科",
+                handle: "@betweenps",
+                tweetId: "2021836655154671819",
+                url: "https://x.com/betweenps/status/2021836655154671819",
+                procedure: "鼻整形"
+            },
+            {
+                id: "23",
+                clinicName: "江南12医院",
+                handle: "@gangnam12clinic",
+                tweetId: "2013137623645335647",
+                url: "https://x.com/gangnam12clinic/status/2013137623645335647",
+                procedure: "糸リフト"
+            },
+            {
+                id: "24",
+                clinicName: "バイウォンクリニック",
+                handle: "@bywonclinic",
+                tweetId: "2010644106146701623",
+                url: "https://x.com/bywonclinic/status/2010644106146701623",
+                procedure: "脂肪吸引"
+            },
+            {
+                id: "25",
+                clinicName: "GNG病院",
+                handle: "@gnghospital_jp",
+                tweetId: "2008057107216728538",
+                url: "https://x.com/gnghospital_jp/status/2008057107216728538",
+                procedure: "耳鼻喉科・美容外科"
+            },
+            {
+                id: "26",
+                clinicName: "XO美容整形外科",
+                handle: "@xops_jp",
+                tweetId: "2017061089016770586",
+                url: "https://x.com/xops_jp/status/2017061089016770586",
+                procedure: "輪郭・鼻整形"
+            },
+            {
+                id: "27",
+                clinicName: "XO美容整形外科",
+                handle: "@xops_jp",
+                tweetId: "2019335196764438713",
+                url: "https://x.com/xops_jp/status/2019335196764438713",
+                procedure: "輪郭・鼻整形"
+            },
+            {
+                id: "28",
+                clinicName: "UVOM整形外科",
+                handle: "@uvom_",
+                tweetId: "2021122062438498409",
+                url: "https://x.com/uvom_/status/2021122062438498409",
+                procedure: "全顔モニター募集"
+            },
+            {
+                id: "29",
+                clinicName: "AND整形外科",
+                handle: "@and_ps_jp",
+                tweetId: "2021783002767114330",
+                url: "https://x.com/and_ps_jp/status/2021783002767114330",
+                procedure: "東京相談会"
+            },
+            {
+                id: "30",
+                clinicName: "グナル美容外科",
+                handle: "@geunal_jp",
+                tweetId: "2021108324595564548",
+                url: "https://x.com/geunal_jp/status/2021108324595564548",
+                procedure: "東京カウンセリング"
+            }
+        ];
+
+        // Render campaign card
+        function renderCampaignCard(campaign) {
+            // Create procedure label if it exists
+            const procedureLabel = campaign.procedure ? `
+                <div class="mb-3">
+                    <p class="text-sm text-gray-600 italic">💉 ${campaign.procedure}</p>
+                </div>
+            ` : '';
+
+            // Create embedded tweet HTML
+            const tweetEmbed = `
+                <div class="mt-4 mb-4">
+                    <blockquote class="twitter-tweet" data-lang="ja" data-theme="light">
+                        <a href="${campaign.url.replace('x.com', 'twitter.com')}"></a>
+                    </blockquote>
+                </div>
+            `;
+
+            return `
+                <div class="campaign-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl">
+                    <!-- Header -->
+                    <div class="mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">${campaign.clinicName}</h3>
+                        <p class="text-sm text-gray-500 mt-1">${campaign.handle}</p>
+                    </div>
+
+                    <!-- Procedure Label (if exists) -->
+                    ${procedureLabel}
+
+                    <!-- Embedded Tweet -->
+                    ${tweetEmbed}
+                </div>
+            `;
+        }
+
+        // Pagination State
+        let currentPage = 1;
+        const itemsPerPage = 10;
+
+        // Render campaigns with pagination
+        function renderCampaigns(page = 1) {
+            // Ensure page is a number (handle event object if passed directly)
+            if (typeof page !== 'number') page = 1;
+
+            currentPage = page;
+            const feedContainer = document.getElementById('campaign-feed');
+            if (!feedContainer) return;
+
+            feedContainer.innerHTML = '';
+
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedCampaigns = campaigns.slice(start, end);
+
+            paginatedCampaigns.forEach(campaign => {
+                const card = document.createElement('div');
+                card.className = 'campaign-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl';
+
+                // Procedure Label
+                let procedureLabel = '';
+                if (campaign.procedure) {
+                    procedureLabel = `<span class="inline-block bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full mb-2 font-semibold">💉 ${campaign.procedure}</span>`;
+                }
+
+                // Tweet Embed
+                const tweetEmbed = `
+                    <div class="mt-2">
+                        <blockquote class="twitter-tweet" data-lang="ja" data-theme="light">
+                            <a href="${campaign.url.replace('x.com', 'twitter.com')}"></a>
+                        </blockquote>
+                    </div>
+                `;
+
+                card.innerHTML = `
+                    <div class="mb-2">
+                        <h3 class="text-xl font-bold text-gray-900">${campaign.clinicName}</h3>
+                        <p class="text-sm text-gray-500 mt-1">${campaign.handle}</p>
+                    </div>
+                    ${procedureLabel}
+                    ${tweetEmbed}
+                `;
+
+                feedContainer.appendChild(card);
+            });
+
+            // Load Twitter widgets
+            function loadTwitterWidgets() {
+                if (window.twttr && window.twttr.widgets) {
+                    // Check if widgets.load accepts an element, otherwise load all
+                    window.twttr.widgets.load(feedContainer);
+                } else {
+                    setTimeout(loadTwitterWidgets, 500);
+                }
+            }
+            loadTwitterWidgets();
+
+            displayPagination();
+
+            // Scroll to top of feed if page changed (and not initial load)
+            const campaignsPage = document.getElementById('campaigns-page');
+            if (campaignsPage && page > 1) {
+                campaignsPage.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function displayPagination() {
+            const container = document.getElementById('pagination-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const totalPages = Math.ceil(campaigns.length / itemsPerPage);
+            if (totalPages <= 1) return;
+
+            // Prev Button
+            const prevButton = document.createElement('button');
+            prevButton.innerText = '前へ';
+            prevButton.className = 'page-btn';
+            prevButton.disabled = currentPage === 1;
+            prevButton.onclick = () => renderCampaigns(currentPage - 1);
+            container.appendChild(prevButton);
+
+            // Page Numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.innerText = i;
+                button.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+                button.onclick = () => renderCampaigns(i);
+                container.appendChild(button);
+            }
+
+            // Next Button
+            const nextButton = document.createElement('button');
+            nextButton.innerText = '次へ';
+            nextButton.className = 'page-btn';
+            nextButton.disabled = currentPage === totalPages;
+            nextButton.onclick = () => renderCampaigns(currentPage + 1);
+            container.appendChild(nextButton);
+        }
+
+        // Clinic List Data (あいうえお順) - 156 clinics
+        const allClinics = [
+            { name: "1mm美容外科", account: "@1mmps_jp" },
+            { name: "1パーセント整形外科", account: "@1percentps" },
+            { name: "21美容外科", account: "@21psjp" },
+            { name: "AB美容外科", account: "@ABPRS_JP" },
+            { name: "AND美容整形外科", account: "@and_ps_jp" },
+            { name: "AND美容整形外科(目)", account: "@and_ps_eye" },
+            { name: "ARC美容整形外科", account: "@ARC_ps_" },
+            { name: "BIKAN整形外科", account: "@bikanps" },
+            { name: "BN (ビエヌ) 美容外科", account: "@somakisa222" },
+            { name: "BNB/バノバギ釜山", account: "@bnbbusan_jp" },
+            { name: "BT整形外科", account: "@BTps_jp" },
+            { name: "DA美容外科", account: "@daprsjp" },
+            { name: "ES清潭", account: "@ES025406042" },
+            { name: "EU口腔顎顔面外科", account: "@Eujapan2" },
+            { name: "IQ美容整形外科", account: "@iqprsjp" },
+            { name: "JAYJUN美容外科", account: "@JAYJUN_PS_JP" },
+            { name: "JK美容外科", account: "@jkplasticjp" },
+            { name: "JT整形外科", account: "@JTJPps" },
+            { name: "KOKO美容外科", account: "@kokopsjp" },
+            { name: "K美容整形外科病院", account: "@k_ps_jp" },
+            { name: "MANO美容整形外科", account: "@MANO95421454" },
+            { name: "MARQ (マーク) 美容外科", account: "@marq_ps_jp" },
+            { name: "NoseLab (ノーズラボ)", account: "@korea_glory" },
+            { name: "SM整形外科", account: "@SM_official_jp" },
+            { name: "SODA (ソーダ) 整形外科", account: "@sodaps_official" },
+            { name: "TAKO美容整形外科", account: "@takopsjp" },
+            { name: "THE MENTOR整形外科", account: "@mentorjp" },
+            { name: "TL美容整形外科", account: "@tlpsjp" },
+            { name: "U&U美容外科", account: "@_unups" },
+            { name: "UcanB美容外科", account: "@ucanb_ps" },
+            { name: "VGベリーグッド美容整形外科", account: "@VgprsJ" },
+            { name: "VIBE美容外科", account: "@vibeprs" },
+            { name: "WANT美容外科", account: "@wantps_jp" },
+            { name: "WOORI (ウリ) 美容外科", account: "@wooripsjp" },
+            { name: "W美容整形外科", account: "@wps_jp" },
+            { name: "XO美容整形外科", account: "@xops_jp" },
+            { name: "id美容クリニック (ID)", account: "@idhospital_jp" },
+            { name: "アイフィット整形外科", account: "@eyefit_kr" },
+            { name: "アイルミ美容外科", account: "@ilumipsjp" },
+            { name: "アウラ美容整形外科", account: "@auraps2024" },
+            { name: "アバント (AVANT) 美容外科", account: "@avant_ps_jp" },
+            { name: "イウル整形外科", account: "@ieulps_jp" },
+            { name: "ウィーバー（ウィバース）", account: "@uversejp" },
+            { name: "ウォンジン美容整形外科", account: "@wonjin_jpn" },
+            { name: "エイペックス美容整形外科", account: "@apex_surgery" },
+            { name: "エートップ (Atop)", account: "@atopseikei" },
+            { name: "エービー美容外科", account: "@abps_jp" },
+            { name: "オヌル整形外科", account: "@onulpsjapan" },
+            { name: "オンユ (ONYU) 美容外科", account: "@onyoops_jp" },
+            { name: "ガーネット美容整形外科", account: "@garnetps_jp" },
+            { name: "キュービス美容整形外科", account: "@qubis_line" },
+            { name: "ギリン(GIRIN)整形外科", account: "@girinps" },
+            { name: "クッキー整形外科", account: "@cookiepskorea" },
+            { name: "クレア美容整形外科", account: "@clairps_jp" },
+            { name: "グナル (Gnal) 美容外科", account: "@gnal_ps_jp" },
+            { name: "グランド美容整形外科", account: "@grandpsjp" },
+            { name: "ケイアート (K-ART) 整形外科", account: "@kartps3615" },
+            { name: "コウォン (Cowon) 整形外科", account: "@prepost1" },
+            { name: "コエンミ（旧ソウルクイーン）", account: "@seoulqueen7" },
+            { name: "コノピ美容整形外科", account: "@conopi_official" },
+            { name: "コーヘン (Cohen) 美容外科", account: "@cohenclinic" },
+            { name: "サンキュー美容外科", account: "@thankyoups_jp" },
+            { name: "ザビダン (The Vidan)", account: "@thebidanjp" },
+            { name: "ザ・プラス美容整形外科", account: "@theplustokyo" },
+            { name: "シグネチャー美容外科", account: "@signaturepsps" },
+            { name: "シャープ整形外科", account: "@sharpps_jp" },
+            { name: "シュガー美容整形外科", account: "@sugarprs" },
+            { name: "ジェイジュン美容整形外科", account: "@jayjunps_jp" },
+            { name: "ジャスト美容整形外科", account: "@justprsjp" },
+            { name: "ジュエリー美容外科", account: "@jewelrypsjapan" },
+            { name: "スケッチ整形外科", account: "@Sketch_psjp" },
+            { name: "スタイル (STYLE) 整形外科", account: "@styleseikei" },
+            { name: "スタート整形外科&ヨンセUP整形病院の案内", account: "@startplasty" },
+            { name: "スターライン整形外科", account: "@starlinejp" },
+            { name: "ストーリークリニック", account: "@skinbystory_JP" },
+            { name: "セギム美容整形", account: "@SaekimJP" },
+            { name: "セミン整形外科", account: "@seminpsjapan" },
+            { name: "ソジン整形外科", account: "@seojin_ps" },
+            { name: "ダビダ美容整形外科", account: "@davidaps_jp" },
+            { name: "チョンダムDEAR整形外科", account: "@dearpsjapan" },
+            { name: "チョンダムOK整形外科", account: "@okaypsjpn" },
+            { name: "チョンダムビョル", account: "@CheongdamStar" },
+            { name: "テーラー (Tailor) 美容整形外科", account: "@TAILORPS1" },
+            { name: "トップフェイス", account: "@topfacejp" },
+            { name: "ドクター美", account: "@drmijp" },
+            { name: "ドリーム整形外科", account: "@dream2017japan" },
+            { name: "ナナ美容外科", account: "@nanahospital" },
+            { name: "ナビ美容整形外科", account: "@NAVI_KOREA_" },
+            { name: "ノ・ジョンフン整形外科", account: "@njhpsjp2023" },
+            { name: "バイウォン美容外科", account: "@BywonClinic" },
+            { name: "バノバギ美容整形外科", account: "@banobagi_jp" },
+            { name: "バランスラボ（ユーライン）", account: "@ulineclinic" },
+            { name: "バンニ美容外科", account: "@vannypsjp" },
+            { name: "パステル美容外科", account: "@shimmian_nose" },
+            { name: "パラミクリニック", account: "@ParamiClinic" },
+            { name: "ヒット (HIT) 整形外科", account: "@hitpsjp" },
+            { name: "ビューティーライン整形外科", account: "@beautylinejp" },
+            { name: "ビューラベル美容整形外科", account: "@beulibal" },
+            { name: "ビュー美容外科", account: "@viewpsjp" },
+            { name: "ビリーフ整形外科", account: "@vlif_ps" },
+            { name: "ビリーフ美容外科", account: "@vlif_ps" },
+            { name: "フィッティング整形外科", account: "@fittingclinicjp" },
+            { name: "フェイスプラス整形外科", account: "@faceplusjp" },
+            { name: "フェイスライン美容整形外科", account: "@faceline1004" },
+            { name: "フルリュン美容外科", account: "@excellent_ps" },
+            { name: "フレッシュホンドクター整形外科", account: "@freshps5512" },
+            { name: "ブラウン美容外科", account: "@braunpsjp" },
+            { name: "プライベート美容外科", account: "@privateps_jp" },
+            { name: "プラデン (PLADEN) 美容整形外科", account: "@pladen_jp" },
+            { name: "プラネット美容整形外科", account: "@planet_ps_ko" },
+            { name: "プリティ美容整形外科", account: "@prettypsjp" },
+            { name: "プリンス整形外科", account: "@princepsjp" },
+            { name: "プリ美容外科", account: "@vvlyps" },
+            { name: "プレミエ美容外科", account: "@PremierPS_JP" },
+            { name: "ボムナゲ・ペークリニック", account: "@bbaebbae_jp" },
+            { name: "ポップ POP 整形外科", account: "@POPJapanPS" },
+            { name: "マイン美容外科", account: "@jpmineplastic" },
+            { name: "マーブル美容外科", account: "@marblepsjapan" },
+            { name: "ミウ (MIU) 整形外科", account: "@miu_ps_jp" },
+            { name: "ミラクル美容整形外科", account: "@miraclelifting" },
+            { name: "ユニーク美容整形外科", account: "@unique__jp" },
+            { name: "ユノ美容外科", account: "@Yunojp2" },
+            { name: "ユボム (UVOM) 整形外科", account: "@uvom_" },
+            { name: "ユー&リン美容整形外科", account: "@youandlin_jp" },
+            { name: "ユーアンドアイ美容整形外科", account: "@YOUandI_Gangnam" },
+            { name: "ヨンセUP整形外科", account: "@YonseiupSeoul" },
+            { name: "ライク(LIKE)整形外科", account: "@lps3329" },
+            { name: "ライク美容整形外科", account: "@lps3329" },
+            { name: "ラインカルチャー", account: "@lineculturejp" },
+            { name: "ラミチェ美容外科", account: "@lamichejp" },
+            { name: "ラリ美容整形外科", account: "@lari_ps_jp" },
+            { name: "リアル美容整形外科", account: "@realps_jp" },
+            { name: "リア美容外科", account: "@reapsjp" },
+            { name: "リウム（LIMO）", account: "@limops_jpn" },
+            { name: "リエンジャン美容外科", account: "@lienjangjp" },
+            { name: "リジェン美容整形外科", account: "@regen_ps_jp" },
+            { name: "リスペック (Respec) 整形外科", account: "@respectps_jp" },
+            { name: "リトマス美容整形外科", account: "@retmusps_jp" },
+            { name: "リニュ整形外科", account: "@trnu2019" },
+            { name: "リンク美容外科", account: "@kankokuseikei_" },
+            { name: "ルジェ美容外科", account: "@lejclinic" },
+            { name: "ロウェル美容整形外科", account: "@Lowellprs" },
+            { name: "ワナビー美容整形外科", account: "@WANNABE_JPN" },
+            { name: "ワンダフル美容外科", account: "@wonderfulpsjpn" },
+            { name: "ワーナ美容外科", account: "@wannajpps" },
+            { name: "星美容整形外科", account: "@jp__byulstar" },
+            { name: "江南HERAクリニック", account: "@gnherajp" },
+            { name: "江南リスリム医院", account: "@RESLIMCLINIC" },
+            { name: "狎鴎亭トップライン", account: "@aptopline1675" },
+            { name: "現代美学", account: "@gendaibigaku_ps" },
+            { name: "現代美学美容整形外科", account: "@gendaibigaku_ps" },
+            { name: "空間 (GONGGAN) 美容外科", account: "@gongganclinic" },
+            { name: "立体美容外科 (Ipche)", account: "@ipchejp" },
+            { name: "輪郭の定石 (Rinkou no Teiseki)", account: "@K_contouring" },
+            { name: "韓国イルゴンゴン美容外科", account: "@100psjp" },
+            { name: "韓国エディション整形外科", account: "@editionprs" }
+        ];
+
+        // Tab Switching Function
+        function switchPage(pageName) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected page
+            if (pageName === 'campaigns') {
+                document.getElementById('campaigns-page').classList.add('active');
+                document.querySelector('[onclick="switchPage(\'campaigns\')"]').classList.add('active');
+            } else if (pageName === 'clinics') {
+                document.getElementById('clinics-page').classList.add('active');
+                document.querySelector('[onclick="switchPage(\'clinics\')"]').classList.add('active');
+                renderClinics();
+            }
+        }
+
+        // Render Clinic List
+        function renderClinics(filteredClinics = allClinics) {
+            const clinicListContainer = document.getElementById('clinic-list');
+            let clinicsHTML = '';
+
+            filteredClinics.forEach(clinic => {
+                clinicsHTML += `
+                    <div class="clinic-item">
+                        <span class="clinic-name">${clinic.name}</span>
+                        <a href="https://x.com/${clinic.account.substring(1)}" target="_blank" class="clinic-account">${clinic.account}</a>
+                    </div>
+                `;
+            });
+
+            clinicListContainer.innerHTML = clinicsHTML;
+        }
+
+        // Romanization mapping for fuzzy search
+        const romajiMap = {
+            'あ': ['a'], 'い': ['i'], 'う': ['u'], 'え': ['e'], 'お': ['o'],
+            'か': ['ka', 'ca'], 'き': ['ki'], 'く': ['ku', 'cu'], 'け': ['ke'], 'こ': ['ko', 'co'],
+            'が': ['ga'], 'ぎ': ['gi'], 'ぐ': ['gu'], 'げ': ['ge'], 'ご': ['go'],
+            'さ': ['sa'], 'し': ['shi', 'si'], 'す': ['su'], 'せ': ['se'], 'そ': ['so'],
+            'ざ': ['za'], 'じ': ['ji', 'zi'], 'ず': ['zu'], 'ぜ': ['ze'], 'ぞ': ['zo'],
+            'た': ['ta'], 'ち': ['chi', 'ti'], 'つ': ['tsu', 'tu'], 'て': ['te'], 'と': ['to'],
+            'だ': ['da'], 'ぢ': ['di', 'ji'], 'づ': ['du', 'zu'], 'で': ['de'], 'ど': ['do'],
+            'な': ['na'], 'に': ['ni'], 'ぬ': ['nu'], 'ね': ['ne'], 'の': ['no'],
+            'は': ['ha'], 'ひ': ['hi'], 'ふ': ['fu', 'hu'], 'へ': ['he'], 'ほ': ['ho'],
+            'ば': ['ba'], 'び': ['bi'], 'ぶ': ['bu'], 'べ': ['be'], 'ぼ': ['bo'],
+            'ぱ': ['pa'], 'ぴ': ['pi'], 'ぷ': ['pu'], 'ぺ': ['pe'], 'ぽ': ['po'],
+            'ま': ['ma'], 'み': ['mi'], 'む': ['mu'], 'め': ['me'], 'も': ['mo'],
+            'や': ['ya'], 'ゆ': ['yu'], 'よ': ['yo'],
+            'ら': ['ra', 'la'], 'り': ['ri', 'li'], 'る': ['ru', 'lu'], 'れ': ['re', 'le'], 'ろ': ['ro', 'lo'],
+            'わ': ['wa'], 'を': ['wo', 'o'], 'ん': ['n'],
+            // Katakana
+            'ア': ['a'], 'イ': ['i'], 'ウ': ['u'], 'エ': ['e'], 'オ': ['o'],
+            'カ': ['ka', 'ca'], 'キ': ['ki'], 'ク': ['ku', 'cu'], 'ケ': ['ke'], 'コ': ['ko', 'co'],
+            'ガ': ['ga'], 'ギ': ['gi'], 'グ': ['gu'], 'ゲ': ['ge'], 'ゴ': ['go'],
+            'サ': ['sa'], 'シ': ['shi', 'si'], 'ス': ['su'], 'セ': ['se'], 'ソ': ['so'],
+            'ザ': ['za'], 'ジ': ['ji', 'zi'], 'ズ': ['zu'], 'ゼ': ['ze'], 'ゾ': ['zo'],
+            'タ': ['ta'], 'チ': ['chi', 'ti'], 'ツ': ['tsu', 'tu'], 'テ': ['te'], 'ト': ['to'],
+            'ダ': ['da'], 'ヂ': ['di', 'ji'], 'ヅ': ['du', 'zu'], 'デ': ['de'], 'ド': ['do'],
+            'ナ': ['na'], 'ニ': ['ni'], 'ヌ': ['nu'], 'ネ': ['ne'], 'ノ': ['no'],
+            'ハ': ['ha'], 'ヒ': ['hi'], 'フ': ['fu', 'hu'], 'ヘ': ['he'], 'ホ': ['ho'],
+            'バ': ['ba'], 'ビ': ['bi'], 'ブ': ['bu'], 'ベ': ['be'], 'ボ': ['bo'],
+            'パ': ['pa'], 'ピ': ['pi'], 'プ': ['pu'], 'ペ': ['pe'], 'ポ': ['po'],
+            'マ': ['ma'], 'ミ': ['mi'], 'ム': ['mu'], 'メ': ['me'], 'モ': ['mo'],
+            'ヤ': ['ya'], 'ユ': ['yu'], 'ヨ': ['yo'],
+            'ラ': ['ra', 'la'], 'リ': ['ri', 'li'], 'ル': ['ru', 'lu'], 'レ': ['re', 'le'], 'ロ': ['ro', 'lo'],
+            'ワ': ['wa'], 'ヲ': ['wo', 'o'], 'ン': ['n']
+        };
+
+        // Convert text to all possible romaji variants
+        function toRomajiVariants(text) {
+            let variants = [text.toLowerCase()];
+            for (let char of text) {
+                if (romajiMap[char]) {
+                    const newVariants = [];
+                    for (let variant of variants) {
+                        for (let romaji of romajiMap[char]) {
+                            newVariants.push(variant.replace(char, romaji));
+                        }
+                    }
+                    variants = newVariants;
+                }
+            }
+            return variants;
+        }
+
+        // Filter Clinics by Search with fuzzy matching
+        function filterClinics() {
+            const searchTerm = document.getElementById('clinic-search').value.toLowerCase();
+            if (!searchTerm) {
+                renderClinics(allClinics);
+                return;
+            }
+
+            const searchVariants = toRomajiVariants(searchTerm);
+
+            const filtered = allClinics.filter(clinic => {
+                const clinicNameLower = clinic.name.toLowerCase();
+                const accountLower = clinic.account.toLowerCase();
+                const clinicNameVariants = toRomajiVariants(clinic.name);
+
+                // Check direct match
+                if (clinicNameLower.includes(searchTerm) || accountLower.includes(searchTerm)) {
+                    return true;
+                }
+
+                // Check romaji variants
+                for (let searchVar of searchVariants) {
+                    if (clinicNameLower.includes(searchVar) || accountLower.includes(searchVar)) {
+                        return true;
+                    }
+                    for (let nameVar of clinicNameVariants) {
+                        if (nameVar.includes(searchVar)) {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            });
+
+            renderClinics(filtered);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCampaigns(1);
+            renderClinics(); // Ensure clinics are also rendered
+        });
+    </script>
+</body>
+
+</html>
