@@ -470,6 +470,7 @@
     <script>
         // Top 30 Campaign Data with Verified Tweet IDs
         const campaigns = [
+            { clinicName: "韓国バタン美容外科", handle: "@batangjp", procedure: "額手術割引イベント（額縮小・額挙上）", id: "2009505586136928724", url: "https://twitter.com/batangjp/status/2009505586136928724" },
             { clinicName: "MOOi整形外科", handle: "@mooips_jp", procedure: "ウィンターイベント（目・鼻・リフト20%OFF）", id: "2001159477308047865", url: "https://twitter.com/mooips_jp/status/2001159477308047865" },
             { clinicName: "オルロ美容外科", handle: "@olops_jp", procedure: "東京相談会 3/29（逆さまつげ専門）", id: "2018188824376127828", url: "https://twitter.com/olops_jp/status/2018188824376127828" },
             { clinicName: "WAVE医院", handle: "@bewavejp", procedure: "鼻モニターモデル募集（5/8まで40%OFF）", id: "2018987902357631366", url: "https://twitter.com/bewavejp/status/2018987902357631366" },
@@ -550,50 +551,44 @@
             { clinicName: "UVERSE美容整形外科", handle: "@uverse_jp", procedure: "鼻整形（自家肋軟骨）", id: "2017783943668674588", url: "https://twitter.com/uverse_jp/status/2017783943668674588" },
             { clinicName: "オペラ整形外科", handle: "@opera_ps_", procedure: "冬季限定イベント（輪郭・鼻・目元）", id: "1998300167880221155", url: "https://twitter.com/opera_ps_/status/1998300167880221155" },
             {
-                id: "new-8",
+                id: "2012045102852841889",
                 clinicName: "フレッシュホンドクター整形外科",
                 handle: "@freshps5512",
-                tweetId: "2012045102852841889",
                 url: "https://x.com/freshps5512/status/2012045102852841889",
                 procedure: "福岡相談会 (3/8)"
             },
             {
-                id: "new-9",
+                id: "2006940883523166498",
                 clinicName: "ビューティーライン整形外科",
                 handle: "@beautylinejp",
-                tweetId: "2006940883523166498",
                 url: "https://x.com/beautylinejp/status/2006940883523166498",
                 procedure: "顔脂肪吸引 最大30%OFF"
             },
             {
-                id: "new-10",
+                id: "2023200658246254661",
                 clinicName: "ビューティーライン整形外科",
                 handle: "@beautylinejp",
-                tweetId: "2023200658246254661",
                 url: "https://x.com/beautylinejp/status/2023200658246254661",
                 procedure: "ナノVライン (顔脂肪吸引)"
             },
             {
-                id: "new-11",
+                id: "2023278166777979209",
                 clinicName: "フレッシュホンドクター整形外科",
                 handle: "@freshps5512",
-                tweetId: "2023278166777979209",
                 url: "https://x.com/freshps5512/status/2023278166777979209",
                 procedure: "新生活応援イベント"
             },
             {
-                id: "new-12",
+                id: "2017496676089417973",
                 clinicName: "ソジン美容整形外科",
                 handle: "@seojin_ps",
-                tweetId: "2017496676089417973",
                 url: "https://x.com/seojin_ps/status/2017496676089417973",
                 procedure: "追加施術22%OFF (2月限定)"
             },
             {
-                id: "new-13",
+                id: "2017079252445954374",
                 clinicName: "狎鴎亭TOPLINE医院",
                 handle: "@aptopline1675",
-                tweetId: "2017079252445954374",
                 url: "https://x.com/aptopline1675/status/2017079252445954374",
                 procedure: "日本相談会 (東京2/21-22 大阪3/28-29)"
             },
@@ -1121,9 +1116,16 @@
 
             feedContainer.innerHTML = '';
 
+            // Sort campaigns by tweet ID (Snowflake ID) descending - newest first
+            const sortedCampaigns = [...campaigns].sort((a, b) => {
+                const idA = BigInt(a.tweetId || a.id);
+                const idB = BigInt(b.tweetId || b.id);
+                return idB > idA ? 1 : (idB < idA ? -1 : 0);
+            });
+
             const start = (page - 1) * itemsPerPage;
             const end = start + itemsPerPage;
-            const paginatedCampaigns = campaigns.slice(start, end);
+            const paginatedCampaigns = sortedCampaigns.slice(start, end);
 
             paginatedCampaigns.forEach(campaign => {
                 const card = document.createElement('div');
@@ -1493,6 +1495,7 @@
             { name: "ロウェル美容整形外科", account: "@Lowellprs" },
             { name: "リターニング整形外科", account: "@jpreturning" },
             { name: "ローヤルライン医院", account: "@royallineclinic" },
+            { name: "ワイヤング美容外科", account: "@youryoungpsjp" },
             { name: "ワナビー美容整形外科", account: "@WANNABE_JPN" },
             { name: "ワンダフル美容外科", account: "@wonderfulpsjpn" },
             { name: "ワーナ美容外科", account: "@wannajpps" },
