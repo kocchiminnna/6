@@ -420,7 +420,8 @@
         <div class="nav-container">
             <button class="nav-tab active" onclick="switchPage('campaigns')">キャンペーン</button>
             <button class="nav-tab" onclick="switchPage('clinics')">クリニックリスト</button>
-            <button class="nav-tab" onclick="switchPage('hair')">💇 植毛専門</button>
+            <button class="nav-tab" onclick="switchPage('hair')">&#x1f487; 植毛</button>
+            <button class="nav-tab" onclick="switchPage('dental')">&#x1f9b7; 歯科</button>
         </div>
     </nav>
 
@@ -462,7 +463,7 @@
     <!-- Hair Transplant Clinics Page -->
     <div id="hair-page" class="page-section">
         <div class="clinic-list-header">
-            <h2>💇 植毛専門クリニック</h2>
+            <h2>&#x1f487; 植毛クリニック</h2>
             <p>日本語で情報発信している韓国植毛・毛髪移植クリニック一覧</p>
             <div class="disclaimer-notice">
                 <p><strong>ℹ️ このリストはあくまで参考情報です（随時更新中）</strong></p>
@@ -477,6 +478,28 @@
         </div>
         <div id="hair-clinic-list">
             <!-- Hair clinics will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Dental Clinics Page -->
+    <div id="dental-page" class="page-section">
+        <div class="clinic-list-header">
+            <h2>&#x1f9b7; 歯科クリニック</h2>
+            <p>日本語で情報発信している韓国歯科クリニック一覧（あいうえお順）</p>
+            <div class="disclaimer-notice">
+                <p><strong>ℹ️ このリストはあくまで参考情報です（随時更新中）</strong></p>
+                <p>掲載されていないクリニックにお気づきの際は、下記アカウントのDMまで情報をお寄せください。</p>
+                <a href="https://x.com/gn0ycrb0ha65833?s=11" target="_blank" class="feedback-button">
+                    &#x1f4e9; DMで情報を送る (@gn0ycrb0ha65833)
+                </a>
+            </div>
+            <div class="search-box">
+                <input type="text" id="dental-search" placeholder="&#x1f50d; クリニック名で検索..."
+                    onkeyup="filterDentalClinics()">
+            </div>
+        </div>
+        <div id="dental-clinic-list">
+            <!-- Dental clinics will be inserted here by JavaScript -->
         </div>
     </div>
 
@@ -1094,6 +1117,10 @@
                 document.getElementById('hair-page').classList.add('active');
                 document.querySelector('[onclick="switchPage(\'hair\')"]').classList.add('active');
                 renderHairClinics();
+            } else if (pageName === 'dental') {
+                document.getElementById('dental-page').classList.add('active');
+                document.querySelector('[onclick="switchPage(\'dental\')"]').classList.add('active');
+                renderDentalClinics();
             }
         }
 
@@ -1150,6 +1177,74 @@
                 clinic.account.toLowerCase().includes(searchTerm)
             );
             renderHairClinics(filtered);
+        }
+
+        // Dental Clinic Data
+        const dentalClinics = [
+            { name: "ATA歯科", account: "@atadental_" },
+            { name: "D-day歯科", account: "@ddaydent" },
+            { name: "NEW N歯科", account: "@newndental" },
+            { name: "SMILEVIEW歯科", account: "@smileview_kr" },
+            { name: "TU歯科", account: "@tudental_jp" },
+            { name: "YE歯科", account: "@yedental_jp" },
+            { name: "アルムトリ歯科", account: "@armetree_jp" },
+            { name: "オヌル歯科", account: "@todaysdentaljpn" },
+            { name: "カンナムユレカ歯科", account: "@dental_eurekajp" },
+            { name: "グリーンモール歯科", account: "@greenmall_jp" },
+            { name: "ザ・スクエア歯科", account: "@thesquaredc_jp" },
+            { name: "ジェア歯科", account: "@zeah_jp" },
+            { name: "スタンダード歯科", account: "@St_dental_jp" },
+            { name: "スマイル:D歯科", account: "@smileddental_jp" },
+            { name: "セラミック歯科", account: "@ceramic_jp" },
+            { name: "ソウルセンタム歯科", account: "@seoul_centum" },
+            { name: "ソウルフェイス21", account: "@seoulface21" },
+            { name: "ソウルフェイス21", account: "@Seoulface21_Jp" },
+            { name: "チェ&イ歯科", account: "@CNL_den" },
+            { name: "チェリースマイル歯科", account: "@cherrysmile_jp" },
+            { name: "延世ユライン歯科", account: "@ulinedentaljp" },
+            { name: "バノバギイレブン歯科", account: "@11kyosei_dental" },
+            { name: "パーフェクト歯科", account: "@perfect_dental_" },
+            { name: "ホワイトスタイル歯科", account: "@whitestyle1995" },
+            { name: "ミソラウム歯科医院", account: "@misoraum_jp" },
+            { name: "ミニッシュ歯科病院", account: "@minish_dental" },
+            { name: "明洞コンビ歯科", account: "@combident_jp" },
+            { name: "ヨンセヒール歯科", account: "@YonseiHeal" },
+            { name: "ル歯科", account: "@ledentals" },
+            { name: "ルーセント歯科", account: "@lucentjp" },
+            { name: "ルシード歯科", account: "@lucid_jp" },
+            { name: "ルブラン歯科", account: "@le_blanc_jp" },
+            { name: "レブ歯科", account: "@revedental_jp" },
+            { name: "リエンジャン歯科", account: "@Lienjangdental3" },
+            { name: "ワン歯科", account: "@onedental_jp" }
+        ];
+
+        // Render Dental Clinic List
+        function renderDentalClinics(filteredClinics = dentalClinics) {
+            const container = document.getElementById('dental-clinic-list');
+            let html = '';
+            filteredClinics.forEach(clinic => {
+                html += `
+                    <div class="clinic-item">
+                        <span class="clinic-name">${clinic.name}</span>
+                        <a href="https://x.com/${clinic.account.substring(1)}" target="_blank" class="clinic-account">${clinic.account}</a>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Filter Dental Clinics
+        function filterDentalClinics() {
+            const searchTerm = document.getElementById('dental-search').value.toLowerCase();
+            if (!searchTerm) {
+                renderDentalClinics(dentalClinics);
+                return;
+            }
+            const filtered = dentalClinics.filter(clinic =>
+                clinic.name.toLowerCase().includes(searchTerm) ||
+                clinic.account.toLowerCase().includes(searchTerm)
+            );
+            renderDentalClinics(filtered);
         }
 
         // Render Clinic List
