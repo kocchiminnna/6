@@ -420,6 +420,7 @@
         <div class="nav-container">
             <button class="nav-tab active" onclick="switchPage('campaigns')">キャンペーン</button>
             <button class="nav-tab" onclick="switchPage('clinics')">クリニックリスト</button>
+            <button class="nav-tab" onclick="switchPage('hair')">💇 植毛専門</button>
         </div>
     </nav>
 
@@ -455,6 +456,27 @@
         </div>
         <div id="clinic-list">
             <!-- Clinics will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Hair Transplant Clinics Page -->
+    <div id="hair-page" class="page-section">
+        <div class="clinic-list-header">
+            <h2>💇 植毛専門クリニック</h2>
+            <p>日本語で情報発信している韓国植毛・毛髪移植クリニック一覧</p>
+            <div class="disclaimer-notice">
+                <p><strong>ℹ️ このリストはあくまで参考情報です（随時更新中）</strong></p>
+                <p>掲載されていないクリニックにお気づきの際は、下記アカウントのDMまで情報をお寄せください。</p>
+                <a href="https://x.com/gn0ycrb0ha65833?s=11" target="_blank" class="feedback-button">
+                    📩 DMで情報を送る (@gn0ycrb0ha65833)
+                </a>
+            </div>
+            <div class="search-box">
+                <input type="text" id="hair-search" placeholder="🔍 クリニック名で検索..." onkeyup="filterHairClinics()">
+            </div>
+        </div>
+        <div id="hair-clinic-list">
+            <!-- Hair clinics will be inserted here by JavaScript -->
         </div>
     </div>
 
@@ -1068,7 +1090,66 @@
                 document.getElementById('clinics-page').classList.add('active');
                 document.querySelector('[onclick="switchPage(\'clinics\')"]').classList.add('active');
                 renderClinics();
+            } else if (pageName === 'hair') {
+                document.getElementById('hair-page').classList.add('active');
+                document.querySelector('[onclick="switchPage(\'hair\')"]').classList.add('active');
+                renderHairClinics();
             }
+        }
+
+        // Hair Transplant Clinic Data
+        const hairClinics = [
+            { name: "ウムチャン毛髪移植医院", account: "@woomchan_japan" },
+            { name: "ウォンジン整形外科・皮膚科", account: "@wonjin_jpn" },
+            { name: "OK医院", account: "@ok_clinic_jp" },
+            { name: "グロウェル医院", account: "@gwl26319900" },
+            { name: "ジェンマ植毛センター", account: "@gemmahair_jp" },
+            { name: "ソジン美容整形外科", account: "@seojin_ps" },
+            { name: "フォーヘア植毛クリニック", account: "@forhair_japan" },
+            { name: "MO.1美容外科", account: "@MO1JP_Official" },
+            { name: "MOBRUN デザイン植毛クリニック", account: "@MOBARUNhair" },
+            { name: "モアマン医院", account: "@moamanjp" },
+            { name: "モウリム医院", account: "@mowoolim" },
+            { name: "モエムクリニック", account: "@moemhairjp" },
+            { name: "モジェリム・クリニック", account: "@mojelim_hair" },
+            { name: "モドゥンモクリニック", account: "@modeunmo_JP" },
+            { name: "モモ植毛クリニック", account: "@momo_syokumou" },
+            { name: "モ＆ジェイルクリニック", account: "@moandjeil_hair" },
+            { name: "モ＆ライン美容形成外科", account: "@moandlineps_jp" },
+            { name: "ネオ植毛クリニック", account: "@neo_hair_jp" },
+            { name: "ニューヘア医院", account: "@newhair_jp" },
+            { name: "パラミクリニック", account: "@ParamiClinic" },
+            { name: "ロミモクリニック", account: "@romimojp" },
+            { name: "ヨンドクター", account: "@Yong_dr_jp" }
+        ];
+
+        // Render Hair Clinic List
+        function renderHairClinics(filteredClinics = hairClinics) {
+            const container = document.getElementById('hair-clinic-list');
+            let html = '';
+            filteredClinics.forEach(clinic => {
+                html += `
+                    <div class="clinic-item">
+                        <span class="clinic-name">${clinic.name}</span>
+                        <a href="https://x.com/${clinic.account.substring(1)}" target="_blank" class="clinic-account">${clinic.account}</a>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Filter Hair Clinics
+        function filterHairClinics() {
+            const searchTerm = document.getElementById('hair-search').value.toLowerCase();
+            if (!searchTerm) {
+                renderHairClinics(hairClinics);
+                return;
+            }
+            const filtered = hairClinics.filter(clinic =>
+                clinic.name.toLowerCase().includes(searchTerm) ||
+                clinic.account.toLowerCase().includes(searchTerm)
+            );
+            renderHairClinics(filtered);
         }
 
         // Render Clinic List
